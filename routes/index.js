@@ -39,4 +39,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express', tracking: track, nav_bar: nav, });
 });
 
+router.post('/submitOrder', function(req, res) {
+    console.log("Message: " + req.body.message);
+    res.end("complete");
+});
+/*
+router.get('/submitOrder', function(req, res, next) {
+  res.redirect('/');
+});*/
+
+
 module.exports = router;
