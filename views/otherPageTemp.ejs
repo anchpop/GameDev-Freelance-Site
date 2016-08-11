@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>SiteByte</title>
+    <meta content="Because your business deserves a quality website."
+    name="description">
+    <meta content="Website,create,SiteByte" name="keywords">
+    <meta content="Andre Popovitch" name="author">
+    <link href="stylesheets/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+    <link href="stylesheets/app.css" rel="stylesheet">
+    <script src="bower_components/modernizr/modernizr.js">
+    </script>
+    <script>
+       <%- tracking %>
+    </script>
+</head>
+<body>
+    <%- nav_bar %>
+    <div class="main">
+        <div class="large-7 medium-11 small-11 small-centered columns">
+            <br class="show-for-large-up">
+            <br>
+            <h1 class="maintext"><%- mainText %> <span class="show-for-medium-up">-</span> <%- mainSubtitle %></h1>
+        </div>
+    </div><br class="show-for-large-up"><br class="show-for-large-up">
+    <div class="row">
+        <div class="large-9 medium-10 small-11 small-centered columns">
+            <div class="card">
+                <div class="content">
+                    <h3 class="text-center card-title"><%- cardTitle %></h3>
+                    <p class="text-center pricing"><%- cardBody %></p>
+                </div>
+            </div>
+        </div>
+    </div><!-- Reveal Modals begin -->
+    <%- modals %>
+    <script src="bower_components/jquery/dist/jquery.min.js">
+    </script>     <script src="http://malsup.github.com/jquery.form.js"></script> 
+    <script src="javascripts/submithandlerandmore.js">
+    </script>
+    <script src="bower_components/foundation/js/foundation.min.js">
+    </script> 
+    <script src="js/app.js">
+    </script>
+</body>
+</html>

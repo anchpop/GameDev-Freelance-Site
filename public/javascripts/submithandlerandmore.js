@@ -22,11 +22,12 @@ $("#submit-btn").click(function(){
           pass=$("#password").val();
           $.post("http://localhost:3000/submitOrder",{name: $('#name').val(), email: $('#email').val(), inspiration: $('#inspiration').val(), message: $('textarea#message').val()}, function(data){
             if(data==='complete')
-              {
-                alert("contact successful");
-              }
+            {
+        	  $('#sucsessModal').foundation('reveal','open');
+            }
          	else if (data==='error of some sort'){
        		   	console.log("an error occured")
        		 }
           });
+
         });

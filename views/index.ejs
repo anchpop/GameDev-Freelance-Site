@@ -4,14 +4,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>SiteByte</title>
-    <meta content="A fan-made version of the Owosso Public Schools website."
+    <meta content="Because your business deserves a quality website."
     name="description">
-    <meta content="Owosso,Public,Schools" name="keywords">
+    <meta content="Website,create,SiteByte" name="keywords">
     <meta content="Andre Popovitch" name="author">
     <link href="stylesheets/app.css" rel="stylesheet">
-    <link href=
-    "https://fonts.googleapis.com/css?family=Bungee+Inline|Inconsolata" rel=
-    "stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Inconsolata" rel="stylesheet">
     <link href="stylesheets/app.css" rel="stylesheet">
     <script src="bower_components/modernizr/modernizr.js">
     </script>
@@ -41,6 +39,18 @@
         started!</a>
     </div><br class="show-for-large-up">
     <br>
+
+    <div class="row">
+        <div class="large-9 medium-10 small-12 small-centered columns">
+	        <div class="card">
+                <div class="content">
+                    <h3 class="text-center card-title">Why SiteByte?</h3>
+                    <p class="text-center">We're a bunch of highschoolers who realized that a lot of businesses around us needed a high-quality website. A website opens new doors for your business and can be a very powerful sales tool. And with an attractive website, people are more likely to stay (whether they find you through Google, ads, or word-of-mouth). But most business owners don't want to invest the cost and effort required for a great website. Since we love computers, we decided to help them achieve their goals without breaking the bank.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
     <div class="row">
         <div class="large-9 medium-10 small-12 small-centered columns">
             <ul class="large-block-grid-3 small-block-grid-1">
@@ -78,43 +88,7 @@
             </ul>
         </div>
     </div><!-- Reveal Modals begin -->
-    <div aria-hidden="true" aria-labelledby="firstModalTitle" class=
-    "reveal-modal" data-reveal="" id="firstModal" role="dialog">
-        <h2 id="firstModalTitle">So you want a website?</h2>
-        <p>You made the right choice. How about you choose what you need? If
-        you have any questions, don't hesitiate to shoot us an email!</p>
-        <form method="post" action="/submitOrder" name="contact" id="contact">
-            <div class="row">
-                <div class="large-4 columns">
-                    <label>Your name<input placeholder="John Doe" type="text" id="name"></label>
-                </div>
-                <div class="large-8 columns">
-                    <label>Your email<input placeholder="username@example.com" type="text"  id="email"></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <label>Are there any websites you really like the design
-                    of? If so, put them here 
-                    <textarea placeholder="example1.com, example2.com, etc."  id="inspiration"></textarea></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <label>What do you want for your site? 
-                    <textarea placeholder="Don't forget to put what you want your website to look like, what you want it to do, what your business does, that kind of thing. We'll email you if we have any questions!" rows="6"  id="message"></textarea></label>
-                </div>
-            </div><a aria-label="Close" class="close-reveal-modal">&#215;</a>
-        </form>
-        <div class="large-3 large-offset-9 text-center column">
-            <button id="submit-btn"  class="radius large button">Send an email</a>
-        </div>
-    </div>
-    <div aria-hidden="true" aria-labelledby="secondModalTitle" class="reveal-modal" data-reveal="" id="secondModal" role="dialog">
-        <h2 id="secondModalTitle">Thanks!</h2>
-        <p>We'll get back to you soon with a quote.</p><a aria-label="Close"
-        class="close-reveal-modal">&#215;</a>
-    </div><!-- Reveal Modals end -->
+    <%- modals %>
     <script src="bower_components/jquery/dist/jquery.min.js">
     </script>     <script src="http://malsup.github.com/jquery.form.js"></script> 
     <script src="javascripts/submithandlerandmore.js">

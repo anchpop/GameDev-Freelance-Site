@@ -137,7 +137,6 @@ body {
     }
     a {
         color: #ffab40;
-        margin-right: 1.3rem;
         transition: color 0.3s ease;
         text-transform: uppercase;
         text-decoration: none;
@@ -154,5 +153,9 @@ body {
         img {
             border-radius: 2px 2px 0 0;
         }
+    }
+    .cardBody {
+        font-size: 1.2rem;
+		text-align:left;
     }
 }
