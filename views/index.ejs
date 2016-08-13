@@ -13,15 +13,7 @@
     <link href="stylesheets/app.css" rel="stylesheet">
     <script src="bower_components/modernizr/modernizr.js">
     </script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-82071438-1', 'auto');
-      ga('send', 'pageview');
-    </script>
+    <%- tracking %>
 </head>
 <body>
     <%- nav_bar %>
@@ -34,7 +26,8 @@
         </div>
     </div><br class="show-for-large-up">
     <br>
-    <div class="large-2 small-centered text-center column">
+    <div class="large-4 small-centered text-center column">
+    	<a class="radius large button secondary" data-reveal-id="firstModal" href="#">Ask a question</a>
         <a class="radius large button" data-reveal-id="firstModal" href="#">Get
         started!</a>
     </div><br class="show-for-large-up">
@@ -45,7 +38,7 @@
 	        <div class="card">
                 <div class="content">
                     <h3 class="text-center card-title">Why SiteByte?</h3>
-                    <p class="text-center">We're a bunch of highschoolers who realized that a lot of businesses around us needed a high-quality website. A website opens new doors for your business and can be a very powerful sales tool. And with an attractive website, people are more likely to stay (whether they find you through Google, ads, or word-of-mouth). But most business owners don't want to invest the cost and effort required for a great website. Since we love computers, we decided to help them achieve their goals without breaking the bank.</p>
+                    <p class="text-center">We're a bunch of highschoolers who realized that a lot of businesses around us needed a high-quality website. But we also knew most business owners have way too much on their plate to spend the time to make a great website. Since we love computers, we decided to help them achieve their deams without trying to empty their wallets.</p>
                 </div>
             </div>
         </div>
@@ -88,6 +81,16 @@
             </ul>
         </div>
     </div><!-- Reveal Modals begin -->
+    <!--<div class="row">
+        <div class="large-9 medium-10 small-12 small-centered columns">
+	        <div class="card">
+                <div class="content">
+                    <h3 class="text-center card-title">Your business deserves a high-quality website</h3>
+                    <p class="text-center">A website opens new doors for your business and can be a very powerful sales tool. And with an attractive website, people are more likely to stay (whether they find you through Google, ads, or word-of-mouth).</p>
+                </div>
+            </div>
+        </div>
+    </div>-->
     <%- modals %>
     <script src="bower_components/jquery/dist/jquery.min.js">
     </script>     <script src="http://malsup.github.com/jquery.form.js"></script> 
