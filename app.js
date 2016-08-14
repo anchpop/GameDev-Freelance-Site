@@ -8,11 +8,14 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var fs = require('fs');
+
 var app = express();
 
 process.env.PWD = process.cwd();
 
-console.log(process.env.PWD);
+console.log("current dir is " + process.env.PWD);
+console.log("contents of public folder is " + fs.readdirSync(path.join(process.env.PWD, 'public')))
 
 //require('dotenv').config()
 
