@@ -12,6 +12,8 @@ var app = express();
 
 process.env.PWD = process.cwd();
 
+console.log(process.env.PWD);
+
 //require('dotenv').config()
 
 // view engine setup
