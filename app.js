@@ -8,34 +8,25 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var fs = require('fs');
-
 var app = express();
 
-process.env.PWD = process.cwd();
-
-console.log("current dir is " + process.env.PWD);
-console.log("contents of public folder is " + fs.readdirSync(path.join(process.env.PWD, 'public')))
-
-//require('dotenv').config()
-
 // view engine setup
-app.set('views', path.join(process.env.PWD, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
-app.use(favicon(path.join(process.env.PWD, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('node-sass-middleware')({
-  src: path.join(process.env.PWD, 'public'),
-  dest: path.join(process.env.PWD, 'public'),
+  src: path.join(__dirname, 'public'),
+  dest: path.join(__dirname, 'public'),
   indentedSyntax: true,
   sourceMap: true
 }));
-app.use('/public', express.static(path.normalize(path.join(process.env.PWD, 'public'))));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
