@@ -30,7 +30,7 @@ app.use(require('node-sass-middleware')({
   indentedSyntax: true,
   sourceMap: true
 }));
-app.use(express.static(path.join(process.env.PWD, 'public')));
+app.use(express.static(path.join(process.env.PWD, '/public')));
 
 app.use('/', routes);
 app.use('/users', users);
