@@ -26,7 +26,7 @@ var nav = `    <nav class="top-bar" data-topbar role="navigation">
 	    <!-- Right Nav Section -->
 	    <ul class="right">
 	      <li><a href="/contact">Contact</a></li>
-	      <li class="active"><a href="https://ps.owosso.k12.mi.us/public/">Order your site!</a></li>
+	      <li class="active"><a href="#" data-reveal-id="firstModal" >Order your site!</a></li>
 	    </ul>
 	    <!-- Left Nav Section -->
 	    <ul class="left">
