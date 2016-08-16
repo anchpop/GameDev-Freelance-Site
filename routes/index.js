@@ -63,21 +63,34 @@ router.get('/contact', function(req, res, next) {
 
 function email_test(email)
 {
-  var regex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+  var regex = new RegExp(`[a-z0-9!#$%&'*+/=?^_\`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?`, "i");
   return regex.test(email);
 }
 
 
 var transporter = nodemailer.createTransport('smtps://user%40gmail.com:pass@smtp.gmail.com');
 
+function addToMailingList(name, email, vars) {
+  var members = [
+    {
+      address: name + " <" + email + '>',
+      vars: vars
+    },
+  ];
+   
+  mailgun.lists(process.env.mailing_list).members().add({ members: members, subscribed: true }, function (err, body) {
+    console.log(body);
+  });
+}
+
 router.post('/submitOrder', function(req, res) {
 
     if (req.body.message != "" && req.body.name != "" && email_test(req.body.email))
     {
+      addToMailingList(req.body.name, req.body.email, {placed_order: true})
       var data = {
         from: req.body.name + ' <' + req.body.email + '>',
-        to: process.env.my_email,
-        cc: process.env.bros_email,
+        to: process.env.my_email + "," + process.env.zdawg_email,
         subject: 'Website for ' + req.body.name,
         text: req.body.message + "\n\n and some inspiration sites are: " + req.body.inspiration
       };
@@ -93,9 +106,9 @@ router.post('/submitOrder', function(req, res) {
 });
 
 router.post('/submitQuestion', function(req, res) {
-    console.log("question");
     if (req.body.message != "" && req.body.name != "" && email_test(req.body.email))
     {
+      addToMailingList(req.body.name, req.body.email, {placed_order: false})
       var data = {
         from: req.body.name + ' <' + req.body.email + '>',
         to: process.env.my_email,
