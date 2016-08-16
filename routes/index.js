@@ -76,8 +76,8 @@ router.post('/submitOrder', function(req, res) {
     {
       var data = {
         from: req.body.name + ' <' + req.body.email + '>',
-        to: 'hyperdead@gmail.com',
-        //cc: 'zephbalsley@gmail.com',
+        to: process.env.my_email,
+        cc: process.env.bros_email,
         subject: 'Website for ' + req.body.name,
         text: req.body.message + "\n\n and some inspiration sites are: " + req.body.inspiration
       };
@@ -98,8 +98,8 @@ router.post('/submitQuestion', function(req, res) {
     {
       var data = {
         from: req.body.name + ' <' + req.body.email + '>',
-        to: 'hyperdead@gmail.com',
-        //cc: 'zephbalsley@gmail.com',
+        to: process.env.my_email,
+        cc: process.env.zdawg_email,
         subject: 'Question from ' + req.body.name,
         text: req.body.message
       };
