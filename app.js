@@ -3,14 +3,16 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+
+require('dotenv').config();
+
 var bodyParser = require('body-parser');
+var LEX = require('letsencrypt-express');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,6 +34,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+var lex = LEX.create({
+  configDir: require('os').homedir() + '/letsencrypt/etc',
+  approveRegistration: function (hostname, cb) {
+    cb(null, {
+      domains: [hostname],
+      email: process.env.my_email,
+      agreeTos: true,
+    });
+  }
+});
+
+lex.onRequest = app;
+
+lex.listen([80], [443, 5001], function () {
+  var protocol = ('requestCert' in this) ? 'https': 'http';
+  console.log("Listening at " + protocol + '://localhost:' + this.address().port);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

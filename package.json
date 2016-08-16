@@ -12,15 +12,14 @@
     "dotenv": "^2.0.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
-    "mailgun-js": "^0.7.12",
+    "mailgun-js": "0.7.12",
     "morgan": "~1.6.1",
     "node-sass-middleware": "0.8.0",
-    "nodemailer": "^2.5.0",
     "serve-favicon": "~2.3.0",
-    "mailgun-js": "0.7.12"
+    "letsencrypt-express": "^1.2.0"
   },
   "engines": {
-    "node": "4.4.7",
+    "node": "6.4.0",
     "npm": "2.15.8"
   }
 }
