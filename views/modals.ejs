@@ -1,0 +1,80 @@
+<div aria-hidden="true" aria-labelledby="firstModalTitle" class="reveal-modal" data-reveal="" id="firstModal" role="dialog">
+    <h2 id="firstModalTitle">So you want a website?</h2>
+    <p>You made the right choice. How about you choose what you need? If
+    you have any questions, don't hesitiate to shoot us an email at <a href='mailto:contact@sitebyte.xyz' style='text-transform: lowercase;'>contact@sitebyte.xyz</a>!</p>
+    <form action="/submitOrder" id="contact" method="post" name="contact">
+        <div class="row">
+            <div class="large-4 columns">
+                <label>Your name*<input id="name" placeholder="John Doe"
+                type="text"></label>
+            </div>
+            <div class="large-8 columns">
+                <label><span id="emailLabel">Your email</span>*<input id=
+                "email" placeholder="username@example.com" type=
+                "text"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <label>Are there any websites you really like the design
+                of? If so, put them here 
+                <textarea id="inspiration" placeholder=
+                "example1.com, example2.com, etc."></textarea></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <label>What do you want for your site? 
+                <textarea id="message" placeholder=
+                "Don't forget to put what you want your website to look like, what you want it to do, what your business does, that kind of thing. We'll email you if we have any questions!"
+                rows="6"></textarea></label>
+            </div>
+        </div><a aria-label="Close" class="close-reveal-modal">&#215;</a>
+    </form>
+    <div class="large-3 text-center column">
+        <h6>* = required</h6>
+    </div>
+    <div class="large-3 large-offset-6 text-center column">
+        <button class="radius large button" disabled id="submit-btn">Send an email</button>
+    </div>
+</div>
+
+
+<div aria-hidden="true" aria-labelledby="questionModalTitle" class="reveal-modal" data-reveal="" id="questionModal" role="dialog">
+    <h2 id="questionModalTitle">Ask away!</h2>
+    <p>You can also email us directly at <a href='mailto:contact@sitebyte.xyz' style='text-transform: lowercase;'>contact@sitebyte.xyz</a></p>
+    <form action="/submitQuestion" id="question_contact" method="post" name="contact">
+        <div class="row">
+            <div class="large-4 columns">
+                <label>Your name*<input id="question_name" placeholder="John Doe"
+                type="text"></label>
+            </div>
+            <div class="large-8 columns">
+                <label><span id="question_emailLabel">Your email</span>*<input id="question_email" placeholder="username@example.com" type=
+                "text"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                <label>What's the question? 
+                <textarea id="question_message" placeholder="" rows="6"></textarea></label>
+            </div>
+        </div><a aria-label="Close" class="close-reveal-modal">&#215;</a>
+    </form>
+    <div class="large-3 text-center column">
+        <h6>All fields are required!</h6>
+    </div>
+    <div class="large-3 large-offset-6 text-center column">
+        <button class="radius large button" disabled id="question_submit-btn">Send an email</button>
+    </div>
+</div>
+<div aria-hidden="true" aria-labelledby="secondModalTitle" class="reveal-modal" data-reveal="" id="successModal" role="dialog">
+    <h2 id="secondModalTitle">Thanks!</h2>
+    <p>We'll get back to you soon with a quote.</p><a aria-label="Close"
+    class="close-reveal-modal">&#215;</a>
+</div>
+<div aria-hidden="true" aria-labelledby="secondModalTitle" class="reveal-modal" data-reveal="" id="question_successModal" role="dialog">
+    <h2 id="secondModalTitle">Thanks!</h2>
+    <p>We'll get back to you soon with your answer.</p><a aria-label="Close"
+    class="close-reveal-modal">&#215;</a>
+</div>

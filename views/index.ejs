@@ -27,8 +27,8 @@
     </div><br class="show-for-large-up">
     <br>
     <div class="large-4 small-centered text-center column">
-    	<a class="radius large button secondary" data-reveal-id="firstModal" href="#">Ask a question</a>
-        <a class="radius large button" data-reveal-id="firstModal" href="#">Get
+    	<a class="radius large button secondary" data-reveal-id="questionModal" href="#question">Ask a question</a>
+        <a class="radius large button" data-reveal-id="firstModal" href="#order">Get
         started!</a>
     </div><br class="show-for-large-up">
     <br>
@@ -88,7 +88,8 @@
             </div>
         </div>
     </div>-->
-    <%- modals %>
+
+    <%- include('modals', {}); %>
     <script src="bower_components/jquery/dist/jquery.min.js">
     </script>
     <script src="javascripts/submithandlerandmore.js">
