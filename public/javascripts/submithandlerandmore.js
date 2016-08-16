@@ -16,7 +16,14 @@ $('#submit-btn').click(function()
     }); 
     //$("#contact").ajaxSubmit({url: 'submitOrder', type: 'post'})
 });*/
+window.onload=function(){
+   $(function(){
+       if(window.location.protocol==="https:")
+           window.location.protocol="http";
+   });
+}
 
+ 
 $("#submit-btn").click(function(){
   $.post("/submitOrder",{name: $('#name').val(), email: $('#email').val(), inspiration: $('#inspiration').val(), message: $('textarea#message').val()}, function(data){
     if(data==='complete')
