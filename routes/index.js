@@ -1,5 +1,4 @@
 var express = require('express');
-var nodemailer = require('nodemailer');
 var router = express.Router();
 
 require('dotenv').config();
@@ -68,7 +67,6 @@ function email_test(email)
 }
 
 
-var transporter = nodemailer.createTransport('smtps://user%40gmail.com:pass@smtp.gmail.com');
 
 function addToMailingList(name, email, vars) {
   var members = [
